@@ -1,0 +1,41 @@
+<script type="text/x-red" data-template-name="folders local">
+    <div class="form-row">
+        <label for="node-input-foldersurl"><i class="icon-tasks"></i> Folders.io</label>
+        <input type="text" id="node-input-foldersurl" placeholder="https://folders.io">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="folders local">
+   <p>Generate messages for files on the local machine.</p>
+   <p>Given a folders.io url, it will serve the file list to remote machines.</p>
+   <p>Parameters:</br>
+   <strong>Folders.io URL:</strong>  Your remote URL.</p>
+   <p>Outputs an object called <b>msg</b> containing <b>msg.payload</b>.
+   msg.payload is the data returned from your local folders.
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('folders local', {
+        category: 'folders',      // the palette category
+        defaults: {             // defines the editable properties of the node
+            name: {value:""},   //  along with default values.
+            foldersurl: {value:"", required:false},
+        },
+        color: "#1aaed9",
+        inputs:0,               // set the number of inputs - only 0 or 1
+        outputs:1,              // set the number of outputs - 0 to n
+        // set the icon (held in icons dir below where you save the node)
+        icon: "folders.png",     // saved in  icons/myicon.png
+        label: function() {     // sets the default label contents
+            return this.name||"Folders";
+        },
+        labelStyle: function() { // sets the class to apply to the label
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

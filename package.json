@@ -1,0 +1,29 @@
+{
+  "name": "node-red-contrib-folders",
+  "version": "0.0.1",
+  "description": "Synthetic file system for local and remote folders",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/foldersjs/node-red-contrib-folders.git"
+  },
+  "author": "",
+  "license": "(Apache-2.0 OR MIT)",
+  "bugs": {
+    "url": "https://github.com/foldersjs/node-red-contrib-folders/issues"
+  },
+  "main":"./src/node-red-contrib-folders",
+  "homepage": "https://github.com/foldersjs/node-red-contrib-folders",
+  "node-red": {
+    "nodes": {
+      "folders_local": "folders/folders.js"
+    }
+  },
+  "dependencies": {
+    "folders": "0.0.x"
+  },
+  "peerDependencies": {
+    "folders": "0.0.x"
+  },
+  "devDependencies": {
+  }
+}
